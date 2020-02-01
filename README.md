@@ -6,10 +6,11 @@ It takes places name as input to give weather forecast in commandline for 5 upco
 The package can be installed using pip by following command
 (Python >=3.6 is required for this project)
 
-###`pip3 install windy-weather-crawler`
+`pip3 install windy-weather-crawler`
+
 OR
 =
-###`pip install windy-weather-crawler`
+`pip install windy-weather-crawler`
 
 ## Usage :
 1. Create a python file with any name
