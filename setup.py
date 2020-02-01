@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     
 setuptools.setup(
     name='windy-weather-crawler',
-    version='1.0',
+    version='1.1',
     author='Sai Sharan Tangeda',
     author_email='saisarantangeda@gmail.com',
     description="A web crawler that takes input as place gives the weather forecast for 5 days",
