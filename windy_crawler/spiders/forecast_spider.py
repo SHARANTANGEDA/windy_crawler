@@ -7,6 +7,8 @@ from selenium.webdriver.common.keys import Keys
 import time
 from tabulate import tabulate
 from selenium.common.exceptions import SessionNotCreatedException
+import logging
+from selenium.webdriver.remote.remote_connection import LOGGER
 
 
 class ForecastSpider(scrapy.Spider):
@@ -16,10 +18,12 @@ class ForecastSpider(scrapy.Spider):
     place_selected = ''
     
     def __init__(self, path_to_firefox_binary='/usr/bin/firefox', **kwargs):
+        logging.getLogger('scrapy').propagate = False
         try:
             super().__init__(**kwargs)
             options = Options()
             options.add_argument('-headless')
+            # logging.getLogger('scrapy').setLevel(logging.WARNING)
             binary = FirefoxBinary(firefox_path=path_to_firefox_binary)
             self.driver = webdriver.Firefox(firefox_binary=binary, options=options)
             self.place_selected = input(
