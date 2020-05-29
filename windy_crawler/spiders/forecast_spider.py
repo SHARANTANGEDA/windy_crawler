@@ -22,7 +22,7 @@ class ForecastSpider(scrapy.Spider):
         try:
             super().__init__(**kwargs)
             options = Options()
-            options.add_argument('-headless')
+            #options.add_argument('-headless')
             # logging.getLogger('scrapy').setLevel(logging.WARNING)
             binary = FirefoxBinary(firefox_path=path_to_firefox_binary)
             self.driver = webdriver.Firefox(firefox_binary=binary, options=options)
@@ -56,6 +56,7 @@ class ForecastSpider(scrapy.Spider):
                 winds_list.append(els.text)
         for els in times:
             times_list.append(els.text)
+        print("DISPLAY LIST", days_list)
         print('#########################Weather Forecast for 5 days##############################')
         for day in days_list:
             print('=>' + day)
@@ -66,6 +67,7 @@ class ForecastSpider(scrapy.Spider):
             current_temps, temps_list = temps_list[:ind], temps_list[ind:]
             current_winds, winds_list = winds_list[:ind], winds_list[ind:]
             display_list = []
+            
             for i in range(0, len(current_times)):
                 display_list.append([current_times[i], current_temps[i], current_winds[i]])
             if airport:
