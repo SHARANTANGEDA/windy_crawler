@@ -8,7 +8,7 @@ certifi==2019.11.28
 cffi==1.14.0
 chardet==3.0.4
 constantly==15.1.0
-cryptography==2.9.2
+cryptography==3.2
 cssselect==1.1.0
 cupshelpers==1.0
 dbus-python==1.2.16
